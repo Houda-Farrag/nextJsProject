@@ -1,0 +1,1 @@
+export { getLetterCategory, getNewLetterCategory, filterLetters } from './letterUtils';

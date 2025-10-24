@@ -1,5 +1,6 @@
 // components/layout/SidebarItem.tsx
-import { cn } from "@/app/lib/utils";
+
+import { cn } from "@/lib";
 import { ReactNode } from "react";
  // optional if you're using className helpers
 

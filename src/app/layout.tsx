@@ -9,6 +9,7 @@ import {
   Power,
   Settings,
   User,
+  BookMarked,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 // Define the sidebar items
 const sidebarLinks = [
+  { href: "/tagweed", label: "Tagweed", icon: <BookMarked  className="h-5 w-5" /> },
   { href: "/functioncss", label: "Blocks", icon: <Blocks className="h-5 w-5" /> },
   { href: "/animatedCircular", label: "Books", icon: <BookOpen className="h-5 w-5" /> },
   { href: "/examples", label: "Example Pages", icon: <FileBox className="h-5 w-5" />, badge: 14 },

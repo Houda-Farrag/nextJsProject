@@ -1,6 +1,7 @@
+"use client"
 import Link from "next/link";
 import { ReactNode } from "react";
-
+import { usePathname, useSearchParams } from 'next/navigation';
 type SidebarLink = {
   href: string;
   label: string;
@@ -9,6 +10,10 @@ type SidebarLink = {
 };
 
 export default function Sidebar({ links }: { links: SidebarLink[] }) {
+// get the url curretn
+  const currentUrl = usePathname().split("/")[1]
+  console.log(currentUrl);
+ 
   return (
     <aside className="flex flex-col h-full w-[250px] bg-white dark:bg-zinc-900 p-4 rounded-r-xl shadow-lg">
       <div className="mb-6 px-2">
@@ -21,7 +26,8 @@ export default function Sidebar({ links }: { links: SidebarLink[] }) {
           <Link
             key={href}
             href={href}
-            className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-900 transition-all"
+            // i want to gave active and not active when i select the route 
+            className={`flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-zinc-800 hover:text-blue-900 transition-all ${currentUrl === href.split("/")[1] ? "bg-blue-50 dark:bg-zinc-800 text-blue-900" : ""}`}
           >
             <div className="shrink-0">{icon}</div>
             <span className="flex-1 truncate">{label}</span>
