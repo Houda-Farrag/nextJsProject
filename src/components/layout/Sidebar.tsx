@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { ReactNode } from "react";
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 type SidebarLink = {
   href: string;
   label: string;
